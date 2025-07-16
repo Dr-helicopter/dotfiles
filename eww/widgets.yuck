@@ -1,0 +1,10 @@
+(defwidget sidebar []
+  (box :class "sidebar"
+       :orientation "vertical"
+       :space-evenly false
+       :exclusive true
+       :stacking "bg"
+       :focusable false
+       (label :text "Eww Sidebar")
+       (button :onclick "notify-send 'Button Clicked!'" "Click Me")))
+

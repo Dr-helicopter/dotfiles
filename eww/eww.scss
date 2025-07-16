@@ -1,0 +1,179 @@
+* {
+  all: unset;
+}
+
+window {
+  background: #46555D;
+  color: #A4BDCB;
+  font-size: 18px;
+
+  & > * {
+    margin: 1px;
+  }
+  font-family: "Terminus (TTF)";
+}
+
+
+.stripes {
+  min-width: 7px;
+  background: repeating-linear-gradient(
+    44deg, /* Angle for diagonal stripes */
+    #3D4A51,
+    #3D4A51 8px,
+    #A4BDCB 8px,
+    #A4BDCB 16px
+  );
+}
+
+.workspaces {
+  button {
+    background: none;
+    margin: 3px;
+    padding-left: 1px;
+    &.inactive {
+      color: #96B2C2;
+    }
+    &.active {
+      color: #8ec07c;
+    }
+    &.occupied {
+      font-size: 1.01rem;
+    }
+    &.empty {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.power_menu{
+  padding-left: 5px;
+  font-size: 27;
+  padding: 0;
+}
+
+
+.segment-top {
+  margin-top: 0px;
+}
+
+.segment-middle {
+  margin: 0px;
+}
+
+.segment-bottom {
+  margin-bottom: 5px;
+}
+
+.volume-metric {
+  background-color: #A4BDCB;
+  color: #ebdbb2;
+  padding: 0;
+
+  .volume-top > scale {
+    margin-bottom: 5px;
+  }
+
+  slider {
+    all: unset;
+  }
+
+  scale trough highlight {
+    all: unset;
+    //background-color: #8ec07c;
+    background-color: #96B2C2;
+    border-bottom-right-radius: 5px;
+  }
+  scale trough {
+    all: unset;
+    background-color: #96B2C2;
+    min-width: 34px;
+    min-height: 2px;
+  }
+}
+
+.workspace-circle {
+  background-color: #3D4A51; // Or whatever the void in your soul looks like
+  color: #cba6f7; // A color that screams "I read manpages"
+  border-radius: 999px; // More 9s = rounder. Always.
+  padding: 0.4em 0.7em;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.control_button {
+  background-color: #3D4A51; // Or whatever the void in your soul looks like
+  color: #cba6f7; // A color that screams "I read manpages"
+  border-radius: 999px; // More 9s = rounder. Always.
+  font-weight: bold;
+  margin-top: -10px;
+  margin-left: 2px;
+
+  margin-right: 2px;
+}
+
+.large-symbol {
+  font-size: 0.9em;
+}
+
+.metric {
+  background-color: #3D4A51;
+  padding: 4px 0px;
+  font-size: 0.9em;
+  min-width: 60px;
+}
+.metric-icon {
+  font-family: "caskaydia cove nerd font";
+  padding: 0px 0px;
+  font-size: 1.0em;
+  margin-left: 2px;
+  margin-right: 0px;
+}
+
+.time {
+  padding-top: 15px;
+  padding-bottom: 1px;
+  margin-bottom: -5;
+  margin-top: 5;
+  color: #A4BDCB;
+}
+
+
+
+
+
+.music_popup {
+  all: unset;
+  background-color: #1d2021;
+  padding: 0px 20px;
+  margin: 0;
+}
+
+// System Tray
+menu {
+  padding: 5px 5px;
+  background-color: #3D4A51;
+
+  >menuitem {
+    font-size: 14px;
+    padding: 2px 5px;
+    //color: $foreground;
+
+    &:disabled label {
+      color: #928374;
+    }
+
+    &:hover {
+      background-color: #282828;
+    }
+  }
+
+  separator {
+    padding-top: 1px;
+
+    &:last-child {
+        padding: unset;
+    }
+  }
+}
