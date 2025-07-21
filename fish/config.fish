@@ -1,6 +1,7 @@
 if status is-interactive
 	abbr -a dr2 /mnt/drive2
 	abbr -a cd.. cd ..
+	abbr -a gh.getTOKEN set TOKEN $(gh auth token)
 end
 
 
@@ -21,3 +22,6 @@ end
 function ifconf
 	curl ifconfig.co 
 end
+
+
+set -Ux MANPAGER 'nvim +Man!'
