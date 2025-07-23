@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-display=eDP-1
-#display=HDMI-A-1
+[ -f "$HOME/.config/.device_specifics/.localrc" ] && source "$HOME/.config/.device_specifics/.localrc"
 
-mpvpaper $display ~/.config/backgrounds/donut.mp4 -o "--loop --no-audio --vf='pad=1366:786:ow-iw/2:(oh-ih)/2:0x080D10'"
+mpvpaper $MONITORNAME ~/.config/backgrounds/donut.mp4 -o "--loop --no-audio --vf='pad=1366:786:ow-iw/2:(oh-ih)/2:0x080D10'"
