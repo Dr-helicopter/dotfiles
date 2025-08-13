@@ -1,16 +1,15 @@
 * {
   all: unset;
+  font-family: "ShureTechMono Nerd Font";
 }
 
 window {
   background: #46555D;
   color: #A4BDCB;
-  font-size: 18px;
 
   & > * {
     margin: 1px;
   }
-  font-family: "Terminus (TTF)";
 }
 
 
@@ -48,7 +47,7 @@ window {
 .power_menu{
   padding-left: 5px;
   font-size: 27;
-  padding: 0;
+  padding: 12;
 }
 
 
@@ -62,6 +61,7 @@ window {
 
 .segment-bottom {
   margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .volume-metric {
@@ -104,7 +104,6 @@ window {
 .control_button {
   background-color: #3D4A51; // Or whatever the void in your soul looks like
   border-radius: 999px; // More 9s = rounder. Always.
-  font-weight: bold;
   margin-top: -10px;
   margin-left: 2px;
 
@@ -122,7 +121,6 @@ window {
   min-width: 60px;
 }
 .metric-icon {
-  font-family: "caskaydia cove nerd font";
   padding: 0px 0px;
   font-size: 1.0em;
   margin-left: 2px;
@@ -134,6 +132,12 @@ window {
   padding-bottom: 1px;
   margin-bottom: -5;
   margin-top: 5;
+  font-size: 23px;
+}
+
+.date{
+  margin-top: 0;
+  font-size: 22px;
 }
 
 

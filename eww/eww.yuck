@@ -23,7 +23,7 @@
 
 (defwidget top [screen]
 	(box :orientation "v"
-		;(workspaces :screen {screen == 1 ? "DP-2" : "HDMI-A-1"})
+		:space-evenly false
 		(button
 			:class "power_menu"
 			:onclick `~/.config/rofi/applets/bin/powermenu.sh`
@@ -55,7 +55,6 @@
 	(box 
 		:orientation "v"
 		(time)
-
 		(date)
 	)
 )
@@ -65,9 +64,9 @@
 		hour min sec
 	)
 )
-(defwidget date []
+(defwidget date [] 
 	(box :orientation "v"
-		:halign "center"
+		:class "date"
 		day_word day month year
 	)
 )
@@ -133,30 +132,7 @@
 )
 
 
-(defwidget volume []
-	(box :class "volume-metric"
-       :orientation "v"
-       :space-evenly false
-       :valign "fill"
-       :vexpand false
-    (scale :orientation "h"
-           :min 0
-           :max 100
-           :onchange "pamixer --set-volume $(echo {} | sed 's/\\..*//g')"
-           :value volume)
-    (eventbox :onscroll "if [ '{}' == 'up' ]; then pamixer -i 5; else pamixer -d 5; fi"
-              :vexpand true
-              :valign "fill"
-      (box :orientation "v"
-           :valign "fill"
-           :vexpand true
-        (button :onclick "rofi -theme ~/.config/rofi/launchers/type-4/style-2.rasi -show rofi-sound -modi 'rofi-sound:rofi-sound-output-chooser' &"
-                :onrightclick "./audio.sh toggle"
 
-
-          (label :text audio_sink))
-        (button :onclick "pavucontrol &"
-          "${volume}%")))))
 
 
 
@@ -164,21 +140,10 @@
 (defwidget large-sym [sym]
 	(label :class "metric-icon large-symbol" :text sym))
 
-
-
-
-(defwidget niri-scroller []
-  (eventbox :onscroll "if [ '{}' == 'down' ]; then niri msg action focus-column-right; else niri msg action focus-column-left; fi"
-            :vexpand true
-            :valign "fill"
-            :style "background-color: #8ec07c; border-radius: 10px;"))
-
+(deflisten workspaces :initial '{"DP-2": [], "HDMI-A-1": []}' "./swayspaces.py")
 
 ; TODO make this not hacky
-(defvar audio_sink "")
 
-(deflisten volume :initial "0" "./audio.sh volume")
-(deflisten workspaces :initial '{"DP-2": [], "HDMI-A-1": []}' "./swayspaces.py")
 
 
 (defpoll hour :interval "1s" "date +%H")
@@ -193,14 +158,7 @@
 (defvar workspaces_1_yuck "")
 (defvar workspaces_2_yuck "")
 
-(defwindow niri_scroller
-	:monitor '["<primary>", "DisplayPort-0", "PHL 345B1C"]'
-	:stacking "fg"
-	:geometry (geometry :x 0 :y 0 :width "800px" :height "5px" :anchor "bottom center")
-	:reserve (struts :distance "10px" :side "bottom")
-	:exclusive false
-	(niri-scroller)
-)
+
 
 (defwindow bar_1
 	:monitor '[0]'
