@@ -16,7 +16,7 @@ end
 function ifconf
 	curl ifconfig.co 
 end
-
+	
 
 function wifi.Home
 	nmcli device wifi rescan

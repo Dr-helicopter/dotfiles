@@ -20,6 +20,26 @@
 	)
 )
 
+(defwidget bar_bat [screen]
+	(box :orientation "h" :space-evenly false
+		(box :class "stripes" :style "width: 60px; height: 100%;")
+		(centerbox :orientation "v"
+			(box :class "segment-top"
+				 :valign "start"
+				(top :screen screen)
+			)
+			(box :valign "center"
+				:class "middle"
+				(middle :screen screen)
+			)
+			(box :valign "end"
+				:class "segment-bottom"
+				(bottom_bat :screen screen)
+			)
+		)
+	)
+)
+
 
 (defwidget top [screen]
 	(box :orientation "v"
@@ -101,8 +121,33 @@
 	)
 )
 
-
 (defwidget bottom [screen]
+	(box :orientation "v"
+		:valign "end"
+		:space-evenly false 
+		:spacing "5"
+
+		(box :oriantattion "h"
+			(button
+				:class "control_button"
+				:onclick `~/.config/eww/scripts/control_panel.sh`
+				""
+			)
+			(workspace-circle)
+		)
+		
+		(metric :icon ""
+			"${round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}%"
+		)
+
+		(metric :icon "" "${round(EWW_RAM.used_mem_perc, 0)}%")
+
+		(metric :icon "" "${round(EWW_CPU.avg, 0)}%")
+	)
+)
+
+(defwidget bottom_bat [screen]
+
 	(box :orientation "v"
 		:valign "end"
 		:space-evenly false 
@@ -168,6 +213,16 @@
 	:reserve (struts :distance "40px" :side "right")
 	:exclusive true
 	(bar :screen 1)
+)
+
+(defwindow bar_1_bat
+	:monitor '[0]'
+	; :monitor "0"
+	:stacking "fg"
+	:geometry (geometry :x 0 :y 0 :width "60px" :height "100%" :anchor "center right")
+	:reserve (struts :distance "40px" :side "right")
+	:exclusive true
+	(bar_bat :screen 1)
 )
 
 (defwindow bar_2

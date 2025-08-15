@@ -19,7 +19,8 @@ bind alt-space execute
 bind alt-e execute
 
 # alt x -> delete
-bind \ex backward-delete-char
+bind alt-x backward-delete-char
+bind alt-X backward-kill-word
 
 # alt c -> clear screan 
 bind alt-c  'cls ; commandline -f repaint ;'
@@ -56,12 +57,15 @@ abbr -a dr2 /mnt/drive2
 abbr -a gh.getTOKEN set TOKEN $(gh auth token)
 abbr -a wifi.scn nmcli device wifi rescan
 abbr -a wifi.cnct nmcli device wifi connect
-abbr -a cdz cd ..
+abbr -a nano nvim
+abbr -a car cat
 
+abbr -a cdz cd ..
 abbr -a cd.. cd ..
 abbr -a ee nvim
 abbr -a dd lsd 
 abbr -a rr rm -r
 abbr -a vv mv
+abbr -a ccd mkdir -p
 
 bind ctrl-d 'true'
