@@ -5,12 +5,13 @@ DATA=$(hyprctl activewindow -j)
 
 FLOATING=$(echo "$DATA" | jq -r '.floating')
 
-# read array safely
-read -r X Y <<<$(echo "$DATA" | jq -r '.size | join(" ")')
-
 if [[ $FLOATING == "false" ]] then
+	hyprctl dispatch layoutmsg togglesplit
 	exit 0
 fi
+
+# read array safely
+read -r X Y <<<$(echo "$DATA" | jq -r '.size | join(" ")')
 
 hyprctl dispatch resizeactive exact $1 $2
 

@@ -30,6 +30,16 @@ function wifi.Phon
 	nmcli device wifi connect Helic
 end
 
+function CC --description 'Copy piped input to clipboard'
+    # Check if wl-copy is available (for Wayland)
+    if command -q wl-copy
+        wl-copy
+    else
+        echo "Error: wl-copy not found. Please install wl-clipboard."
+        return 1
+    end
+end
+
 
 set -Ux MANPAGER 'nvim +Man!'
 set -Ux EDITOR 'nvim'

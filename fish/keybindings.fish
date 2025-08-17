@@ -30,6 +30,8 @@ bind alt-q exit
 
 bind alt-r "echo '' ;  ls -C --width=80 ; commandline -f repaint "
 
+bind alt-C 'commandline -i "|"'
+
 
 #  ___  _            _   _               _    
 # |   \(_)_ _ ___ __| |_(_)___ _ _  __ _| |___
@@ -57,9 +59,9 @@ abbr -a dr2 /mnt/drive2
 abbr -a gh.getTOKEN set TOKEN $(gh auth token)
 abbr -a wifi.scn nmcli device wifi rescan
 abbr -a wifi.cnct nmcli device wifi connect
+
 abbr -a nano nvim
 abbr -a car cat
-
 abbr -a cdz cd ..
 abbr -a cd.. cd ..
 abbr -a ee nvim
@@ -67,5 +69,16 @@ abbr -a dd lsd
 abbr -a rr rm -r
 abbr -a vv mv
 abbr -a ccd mkdir -p
+abbr -a ss sudo
+
+abbr -a eess sudo nvim
+abbr -a rrss sudo rm -r
+abbr -a vvss sudo mv
+abbr -a ccdss sudo mkdir -p
+
+abbr -a tt1 sudo chvt 1
+abbr -a tt2 sudo chvt 2
+abbr -a tt3 sudo chvt 3
+abbr -a tt4 sudo chvt 4
 
 bind ctrl-d 'true'
