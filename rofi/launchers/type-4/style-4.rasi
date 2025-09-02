@@ -17,6 +17,8 @@ configuration {
     display-window:             "";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
+	window-show-animation: "none";
+	window-hide-animation: "none";
 }
 
 /*****----- Global Properties -----*****/
@@ -24,12 +26,12 @@ configuration {
 @import                          "shared/fonts.rasi"
 
 * {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background);
+    border-colour:               #829ea4;
+    handle-colour:               #080d10;
+    background-colour:           #080d10;
+    foreground-colour:           #829ea4;
+    alternate-background:        #3d4a51;
+    normal-background:           #080d10;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
@@ -41,12 +43,13 @@ configuration {
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
+    alternate-normal-background: #080d10;
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);
     alternate-active-background: var(active);
     alternate-active-foreground: var(background);
+	fade: false;
 }
 
 /*****----- Main Window -----*****/

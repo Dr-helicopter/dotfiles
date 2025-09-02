@@ -32,7 +32,7 @@ bind alt-r "echo '' ;  ls -C --width=80 ; commandline -f repaint "
 
 bind alt-C 'commandline -i "|"'
 
-
+bind alt-f "fff"
 #  ___  _            _   _               _    
 # |   \(_)_ _ ___ __| |_(_)___ _ _  __ _| |___
 # | |) | | '_/ -_) _|  _| / _ \ ' \/ _` | (_-<
@@ -56,14 +56,17 @@ bind alt-D forward-word
 #
 
 abbr -a dr2 /mnt/drive2
+abbr -a cdz cd ..
+abbr -a cddw cd ~/Downloads/
+abbr -a cddc cd ~/Documents/
+abbr -a cd.. cd ..
+
 abbr -a gh.getTOKEN set TOKEN $(gh auth token)
 abbr -a wifi.scn nmcli device wifi rescan
 abbr -a wifi.cnct nmcli device wifi connect
 
 abbr -a nano nvim
 abbr -a car cat
-abbr -a cdz cd ..
-abbr -a cd.. cd ..
 abbr -a ee nvim
 abbr -a dd lsd 
 abbr -a rr rm -r

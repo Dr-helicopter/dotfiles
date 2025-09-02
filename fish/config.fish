@@ -41,6 +41,10 @@ function CC --description 'Copy piped input to clipboard'
 end
 
 
+function x
+	~/scripts/open.sh $argv[1]
+end
+
 set -Ux MANPAGER 'nvim +Man!'
 set -Ux EDITOR 'nvim'
 status --is-interactive; and source (pyenv init -|psub)

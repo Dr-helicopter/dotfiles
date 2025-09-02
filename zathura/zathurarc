@@ -1,0 +1,18 @@
+# Quit on X (sanity check)
+map q quit
+
+map D toggle_page_mode
+
+# WASD movement
+map w scroll up
+map s scroll down
+map a scroll left
+map d scroll right
+
+map W navigate previous
+map S navigate next
+
+# Zoom with Alt+W/S
+map <A-w> zoom in
+map <A-s> zoom out
+
