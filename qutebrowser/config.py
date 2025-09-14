@@ -1893,7 +1893,7 @@ c.qt.workarounds.disable_hangouts_extension = True
 #   - progress: Progress bar for the current page loading.
 #   - text:foo: Display the static text after the colon, `foo` in the example.
 #   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
-c.statusbar.widgets = ['keypress', 'url', 'mode', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool

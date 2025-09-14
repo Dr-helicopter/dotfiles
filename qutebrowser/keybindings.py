@@ -11,6 +11,10 @@ def add_bindings(config):
 	config.bind('<Alt-a>', 'scroll left', mode='insert')
 	config.bind('<Alt-d>', 'scroll right', mode='insert')
 
+	config.bind('<Alt-w>', 'completion-item-focus --history prev', mode='command')
+	config.bind('<Alt-s>', 'completion-item-focus --history next', mode='command')
+	config.bind('<Alt-e>', ' selection-follow', mode='command')
+
 	STEP = 120  # pixels per tick
 	config.bind("<w>", f"scroll-px 0 -{STEP}")
 	config.bind("<s>", f"scroll-px 0 {STEP}")
@@ -28,7 +32,7 @@ def add_bindings(config):
 	config.bind("<Alt-x>", "fake-key <Backspace>", mode='insert')
 	config.bind("<Alt-x>", "fake-key <Backspace>")
 
-	config.bind("<Alt-Space>", "click-element")
+	config.bind("<Alt-Space>", "spawn --detach xdotool click 1")
 
 	config.bind("<Tab>", "tab-next")
 	config.bind("<Shift-Tab>", "tab-prev")
@@ -54,6 +58,7 @@ def add_bindings(config):
 	config.unbind("r")
 	config.unbind('<Escape>')
 	config.unbind('/')
+	config.bind('<Menu>', 'nop', mode='insert')
 
 	config.bind('F', 'hint all tab')
 

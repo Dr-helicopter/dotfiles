@@ -11,6 +11,7 @@ quick_access_table = {
 	't': "https://www.youtube.com",
 	'd': "https://start.duckduckgo.com",
 	'g': "github.com",
+	'm': "gmail.com",
 }
 
 proxy_table = {

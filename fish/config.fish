@@ -49,6 +49,7 @@ set -Ux MANPAGER 'nvim +Man!'
 set -Ux EDITOR 'nvim'
 status --is-interactive; and source (pyenv init -|psub)
 
+set -x LS_COLORS 'di=00;94:*.mkv=0;94;41:*.mp4=0;94;41:*.pdf=0;90;43'
 
 # set keybindings
 if status is-interactive
