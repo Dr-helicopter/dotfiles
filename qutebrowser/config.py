@@ -681,7 +681,7 @@ c.content.blocking.adblock.lists = [
 ]
 # Enable the ad/host blocker
 # Type: Bool
-c.content.blocking.enabled = True
+c.content.blocking.enabled = False
 
 ## Block subdomains of blocked hosts. Note: If only a single subdomain is
 ## blocked but should be allowed, consider using
