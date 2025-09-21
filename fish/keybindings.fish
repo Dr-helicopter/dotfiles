@@ -65,6 +65,7 @@ abbr -a gh.getTOKEN set TOKEN $(gh auth token)
 abbr -a wifi.scn nmcli device wifi rescan
 abbr -a wifi.cnct nmcli device wifi connect
 abbr -a lp "ps aux | grep"
+abbr -a gitlog git log --oneline --graph
 
 abbr -a nano nvim
 abbr -a car cat
