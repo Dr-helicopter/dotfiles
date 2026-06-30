@@ -7,6 +7,8 @@ hl.monitor({
 
 
 require("animations")
+require("keybindings")
+require("rules")
 
 ------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -146,10 +148,10 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout  = "us",
+        kb_layout  = "us, ir",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "grp:alt_shift_toggle",
         kb_rules   = "",
 
 		repeat_rate = 60,
@@ -182,7 +184,6 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-require("keybindings")
 
 -------------------------------
 ---- WINDOWS AND WORKSPACES ----
