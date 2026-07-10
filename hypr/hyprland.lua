@@ -140,18 +140,15 @@ hl.config({
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
-
-
 ---------------
 ---- INPUT ----
 ---------------
-
 hl.config({
     input = {
         kb_layout  = "us, ir",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "grp:alt_shift_toggle",
+        kb_options = "grp:alt_shift_toggle,caps:hyper,compose:menu",
         kb_rules   = "",
 
 		repeat_rate = 60,

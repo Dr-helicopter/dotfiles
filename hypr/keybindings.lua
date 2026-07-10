@@ -1,13 +1,17 @@
+local toggle_floating_script='~/.config/hypr/scripts/toggle_floating_focus.sh'
+
+
 local terminal		= "foot"
 local menu			= "menu"
 local browser 		= "qutebrowser"
 
-local bind = hl.bind
+local function bind() end
+bind = hl.bind
 
 local mainMod = "SUPER + " -- Sets "Windows" key as main modifier
 
 
-
+bind("MOD3 + Hyper_L", hl.dsp.exec_cmd(toggle_floating_script), {release= true})
 
 bind(mainMod .. "c", hl.dsp.exec_cmd(terminal))
 bind(mainMod .. "q", hl.dsp.window.close())
@@ -25,10 +29,10 @@ bind(mainMod .. "SHIFT + d", hl.dsp.window.move({ direction = "right" }))
 bind(mainMod .. "SHIFT + w", hl.dsp.window.move({ direction = "up" }))
 bind(mainMod .. "SHIFT + s", hl.dsp.window.move({ direction = "down" }))
 
-bind(mainMod .. "CTRL + a", hl.dsp.window.resize({ x = -10, y = 0 , relative = true}))
-bind(mainMod .. "CTRL + d", hl.dsp.window.resize({ x = 10 , y = 0 , relative = true}))
-bind(mainMod .. "CTRL + w", hl.dsp.window.resize({ x = 0, y =  10 , relative = true}))
-bind(mainMod .. "CTRL + s", hl.dsp.window.resize({ x = 0, y = -10 , relative = true}))
+bind(mainMod .. "CTRL + a", hl.dsp.window.resize({ x = -10, y = 0 , relative = true}), { repeating = true})
+bind(mainMod .. "CTRL + d", hl.dsp.window.resize({ x = 10 , y = 0 , relative = true}), { repeating = true})
+bind(mainMod .. "CTRL + w", hl.dsp.window.resize({ x = 0, y =  10 , relative = true}), { repeating = true})
+bind(mainMod .. "CTRL + s", hl.dsp.window.resize({ x = 0, y = -10 , relative = true}), { repeating = true})
 
 
 
@@ -38,7 +42,9 @@ bind(mainMod .. "ALT + d", hl.dsp.focus({workspace = "e+1"}))
 
 bind(mainMod .. "v", hl.dsp.layout("togglesplit"))    -- dwindle only
 bind(mainMod .. "f", hl.dsp.window.float({ action = "toggle" }))
+bind(mainMod .. "ALT + f", hl.dsp.window.fullscreen({ action = "toggle" }))
 
+bind(mainMod .. "SHIFT + p", hl.dsp.exec_cmd('screenshot.sh p'))
 
 for i = 1, 9 do
     hl.bind(mainMod .. i, hl.dsp.focus({ workspace = i}))
@@ -68,9 +74,8 @@ hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("musicman-daemon next"),		{ locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("musicman-daemon pause-play"),{ locked = true })
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("musicman-daemon pause-play"),{ locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("musicman-daemon prev"),		{ locked = true })
 
